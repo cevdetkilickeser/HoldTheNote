@@ -36,7 +36,6 @@
                 android:background="@android:color/transparent"
                 android:hint="Title"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
@@ -64,7 +63,6 @@
                 android:hint="Type to Remember"
                 android:inputType="textMultiLine"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 android:textSize="16sp" />
 
         </androidx.cardview.widget.CardView>
@@ -87,11 +85,11 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:clickable="true"
-            app:backgroundTint="#0590EC"
+            android:onClick="@{() -> addNoteFragment.onClickFabDone(fabDone,etTitleAddNote.getText().toString(),etDetailAddNote.getText().toString())}"
+            app:backgroundTint="#93CBD3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/done"
-            android:onClick="@{() -> addNoteFragment.onClickFabDone(fabDone,etTitleAddNote.getText().toString(),etDetailAddNote.getText().toString())}" />
+            app:srcCompat="@drawable/done" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

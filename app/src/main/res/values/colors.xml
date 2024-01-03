@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="colorPrimary">#93CBD3</color>
+    <color name="colorSecondary">#006197</color>
     <color name="color1">#F44336</color>
     <color name="color2">#4CAF50</color>
     <color name="color3">#E91E63</color>
