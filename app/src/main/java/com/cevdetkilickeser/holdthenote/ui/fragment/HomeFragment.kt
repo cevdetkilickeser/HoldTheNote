@@ -72,8 +72,8 @@ class HomeFragment : Fragment(){
                 val deletedNote = homeAdapter.noteList[position]
                 viewModel.deleteNote(deletedNote)
 
-                Snackbar.make(requireView(),"Deleted from favorites", Snackbar.LENGTH_LONG)
-                    .setAction("UNDO",
+                Snackbar.make(requireView(),getString(R.string.deleteLogcat), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.undo),
                         View.OnClickListener {
                             viewModel.insertNote(deletedNote.title, deletedNote.detail, deletedNote.date)
                         }

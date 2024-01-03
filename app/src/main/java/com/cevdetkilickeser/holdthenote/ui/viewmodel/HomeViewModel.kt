@@ -28,7 +28,6 @@ class HomeViewModel @Inject constructor (var noterepo: NoteRepository) : ViewMod
 
     fun searchNote(searchQuery: String){
         noterepo.searchNote(searchQuery)
-        //noteList = noterepo.returnNoteListRepo()
     }
 
     fun loadNotes(){

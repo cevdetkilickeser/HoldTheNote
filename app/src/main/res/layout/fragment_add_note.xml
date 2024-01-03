@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
-                android:hint="Title"
+                android:hint="@string/title"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -60,7 +60,7 @@
                 android:background="@android:color/transparent"
                 android:ems="10"
                 android:gravity="top"
-                android:hint="Type to Remember"
+                android:hint="@string/detail"
                 android:inputType="textMultiLine"
                 android:textColor="@color/black"
                 android:textSize="16sp" />

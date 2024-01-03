@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Title</string>
     <string name="detail">Type to remember…</string>
+    <string name="search">Search…</string>
+    <string name="deleteLogcat">Note Deleted</string>
+    <string name="undo">UNDO</string>
 </resources>

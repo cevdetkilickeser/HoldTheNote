@@ -52,10 +52,6 @@ class NoteRepository(var notedao: NoteDao) {
     fun downloadAllNotesPassToNoteListRepo(){
         val job = CoroutineScope(Dispatchers.IO).launch {
             noteListRepo.postValue(notedao.downloadAllNotes())
-        /*val notes = notedao.downloadAllNotes()
-            withContext(Dispatchers.Main) {
-                noteListRepo.value = notes
-            }*/
         }
     }
 

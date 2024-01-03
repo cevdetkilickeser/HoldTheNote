@@ -37,7 +37,7 @@
             android:id="@+id/updateNoteToHome"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/updateNoteFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
         <argument
             android:name="note"
             app:argType="com.cevdetkilickeser.holdthenote.data.entity.Note" />
