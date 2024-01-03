@@ -7,6 +7,9 @@
         <variable
             name="addNoteFragment"
             type="com.cevdetkilickeser.holdthenote.ui.fragment.AddNoteFragment" />
+        <variable
+            name="date"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,8 +33,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:background="@android:color/transparent"
                 android:hint="Title"
                 android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
@@ -53,12 +58,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp"
-                android:hint="Type to Remember"
+                android:background="@android:color/transparent"
+                android:ems="10"
                 android:gravity="top"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:hint="Type to Remember"
                 android:inputType="textMultiLine"
-                android:ems="10"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="16sp" />
 
         </androidx.cardview.widget.CardView>
 
@@ -68,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="15162062515"
+            android:text="@{date}"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -84,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/done"
-            android:onClick="@{() -> addNoteFragment.onClickFabDone(fabDone,etTitleAddNote.getText().toString(),etDetailAddNote.getText().toString(),etDateAddNote.getText().toString())}" />
+            android:onClick="@{() -> addNoteFragment.onClickFabDone(fabDone,etTitleAddNote.getText().toString(),etDetailAddNote.getText().toString())}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

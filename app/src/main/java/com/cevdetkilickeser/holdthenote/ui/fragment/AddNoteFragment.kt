@@ -12,6 +12,7 @@ import com.cevdetkilickeser.holdthenote.R
 import com.cevdetkilickeser.holdthenote.data.entity.Note
 import com.cevdetkilickeser.holdthenote.databinding.FragmentAddNoteBinding
 import com.cevdetkilickeser.holdthenote.ui.viewmodel.AddNoteViewModel
+import com.cevdetkilickeser.holdthenote.utils.DateHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,11 +33,13 @@ class AddNoteFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_add_note, container, false)
         binding.addNoteFragment = this
+        binding.date = DateHelper.getCurrentDate()
 
         return binding.root
     }
 
-    fun onClickFabDone(view: View, title: String, detail: String, date: String){
+    fun onClickFabDone(view: View, title: String, detail: String){
+        val date = DateHelper.getCurrentDate()
         viewModel.insertNote(title,detail,date)
         val nav = AddNoteFragmentDirections.addNoteToHome()
         Navigation.findNavController(view).navigate(nav)

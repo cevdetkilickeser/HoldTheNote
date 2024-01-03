@@ -15,6 +15,11 @@ class HomeAdapter(var context: Context,
                   var noteList: List<Note>)
     : RecyclerView.Adapter<HomeAdapter.NoteViewHolder>() {
 
+    fun setItems (noteList: List<Note>){
+        this.noteList = noteList
+        notifyDataSetChanged()
+    }
+
     inner class NoteViewHolder(binding: NoteHolderBinding) : RecyclerView.ViewHolder(binding.root) {
         var binding: NoteHolderBinding
         init {

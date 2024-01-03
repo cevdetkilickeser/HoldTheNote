@@ -24,6 +24,7 @@ class NoteRepository(var notedao: NoteDao) {
         val job = CoroutineScope(Dispatchers.Main).launch {
             val newNote = Note(0,title,detail,date)
             notedao.insertNote(newNote)
+            downloadAllNotesPassToNoteListRepo()
         }
     }
 

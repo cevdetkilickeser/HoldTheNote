@@ -14,6 +14,7 @@ import com.cevdetkilickeser.holdthenote.data.entity.Note
 import com.cevdetkilickeser.holdthenote.databinding.FragmentUpdateNoteBinding
 import com.cevdetkilickeser.holdthenote.ui.viewmodel.AddNoteViewModel
 import com.cevdetkilickeser.holdthenote.ui.viewmodel.UpdateNoteViewModel
+import com.cevdetkilickeser.holdthenote.utils.DateHelper
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -46,15 +47,9 @@ class UpdateNoteFragment : Fragment() {
     }
 
     fun onClickFabUpdate(view: View, title: String, detail: String){
-        val date = getCurrentDateTime()
+        val date = DateHelper.getCurrentDate()
         viewModel.updateNote(takenNote.id,title,detail,date)
         val nav = UpdateNoteFragmentDirections.updateNoteToHome()
         Navigation.findNavController(view).navigate(nav)
-    }
-
-    fun getCurrentDateTime(): String {
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale.getDefault())
-        val date = Date()
-        return dateFormat.format(date)
     }
 }

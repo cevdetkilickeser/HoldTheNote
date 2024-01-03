@@ -11,7 +11,7 @@ import com.cevdetkilickeser.holdthenote.data.entity.Note
 @Dao
 interface NoteDao {
 
-    @Query("SELECT * from notes ORDER BY id ASC")
+    @Query("SELECT * from notes ORDER BY id DESC")
     fun downloadAllNotes() : List<Note>
 
     @Insert
