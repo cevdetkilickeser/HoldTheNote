@@ -24,9 +24,7 @@
         tools:layout="@layout/fragment_add_note">
         <action
             android:id="@+id/addNoteToHome"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/addNoteFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateNoteFragment"
@@ -35,9 +33,7 @@
         tools:layout="@layout/fragment_update_note" >
         <action
             android:id="@+id/updateNoteToHome"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/updateNoteFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/homeFragment" />
         <argument
             android:name="note"
             app:argType="com.cevdetkilickeser.holdthenote.data.entity.Note" />

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
@@ -56,7 +57,6 @@ class HomeFragment : Fragment(){
 
         })
 
-
         val itemTouchHelper = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.RIGHT or ItemTouchHelper.RIGHT
@@ -72,18 +72,30 @@ class HomeFragment : Fragment(){
                 val deletedNote = homeAdapter.noteList[position]
                 viewModel.deleteNote(deletedNote)
 
-                Snackbar.make(requireView(),getString(R.string.deleteLogcat), Snackbar.LENGTH_LONG)
+                Snackbar.make(requireView(),getString(R.string.delete_logcat), Snackbar.LENGTH_LONG)
                     .setAction(getString(R.string.undo),
                         View.OnClickListener {
                             viewModel.insertNote(deletedNote.title, deletedNote.detail, deletedNote.date)
                         }
-                    ).show()
+                    )
+                    .setTextColor(resources.getColor(R.color.colorSecondary))
+                    .setBackgroundTint(resources.getColor(R.color.colorPrimary))
+                    .setActionTextColor(resources.getColor(R.color.colorSecondary))
+                    .show()
             }
         }
 
         ItemTouchHelper(itemTouchHelper).attachToRecyclerView(binding.recyclerView)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            activity?.finish()
+        }
     }
 
     fun onClickFabAdd(view:View){
@@ -95,4 +107,5 @@ class HomeFragment : Fragment(){
         super.onResume()
         viewModel.loadNotes()
     }
+
 }

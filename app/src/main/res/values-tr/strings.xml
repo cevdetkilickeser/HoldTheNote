@@ -5,6 +5,7 @@
     <string name="title">Başlık</string>
     <string name="detail">Not al, unutma…</string>
     <string name="search">Ara…</string>
-    <string name="deleteLogcat">Not Silindi</string>
+    <string name="delete_logcat">Not Silindi</string>
     <string name="undo">GERİ AL</string>
+    <string name="no_title">Lütfen başlık ekleyin</string>
 </resources>

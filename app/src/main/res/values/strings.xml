@@ -5,6 +5,7 @@
     <string name="title">Title</string>
     <string name="detail">Type to remember…</string>
     <string name="search">Search…</string>
-    <string name="deleteLogcat">Note Deleted</string>
+    <string name="delete_logcat">Note Deleted</string>
     <string name="undo">UNDO</string>
+    <string name="no_title">Please add title</string>
 </resources>

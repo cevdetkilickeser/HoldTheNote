@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -39,10 +40,14 @@ class AddNoteFragment : Fragment() {
     }
 
     fun onClickFabDone(view: View, title: String, detail: String){
-        val date = DateHelper.getCurrentDate()
-        viewModel.insertNote(title,detail,date)
-        val nav = AddNoteFragmentDirections.addNoteToHome()
-        Navigation.findNavController(view).navigate(nav)
+        if (title.isNotEmpty()){
+            val date = DateHelper.getCurrentDate()
+            viewModel.insertNote(title,detail,date)
+            val nav = AddNoteFragmentDirections.addNoteToHome()
+            Navigation.findNavController(view).navigate(nav)
+        }else{
+            Toast.makeText(requireContext(),getString(R.string.no_title),Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
